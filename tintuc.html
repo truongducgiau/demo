@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GBH Shop - Shop Cầu Lông</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./imgs/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./imgs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./imgs/favicon-16x16.png">
+    <link rel="manifest" href="./imgs/site.webmanifest">
+</head>
+
+<body>
+    <div class="trangchu">
+        <div class="menu">
+            <div class="birs">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo-Yonex.svg/2560px-Logo-Yonex.svg.png"
+                    class="anh" alt="anh">
+            </div>
+            <div class="tk">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <ul class="links">
+                <li class="active"><a href="index.html">TRANG CHỦ</a></li>
+                <li><a href="caulong.html">CẦU LÔNG</a></li>
+                <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+                <li><a href="tintuc.html">TIN TỨC</a></li>
+                <li><a href="lienhe.html">LIÊN HỆ</a></li>
+            </ul>
+            <div class="tim-kiem">
+                <input type="text" class="search" placeholder="Tìm sản phẩm...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="dangnhap">
+                <ul>
+                    <li><i class="fa-solid fa-earth-americas"></i><span>QUỐC GIA</span></li>
+                    <li><i class="fa-solid fa-circle-user"></i><span>TÀI KHOẢN</span></li>
+                    <li><i class="fa-solid fa-cart-arrow-down"></i><span>GIỎ HÀNG</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="menucon">
+            <li class="active"><a href="index.html">TRANG CHỦ</a></li>
+            <li><a href="caulong.html">CẦU LÔNG</a></li>
+            <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+            <li><a href="tintuc.html">TIN TỨC</a></li>
+            <li><a href="lienhe.html">LIÊN HỆ</a></li>
+        </div>
+    </div>
+    <script>
+        const toggleBtn = document.querySelector('.birs')
+        const toggleBtnIcon = document.querySelector('.birs i')
+        const dropDownMenu = document.querySelector('.menucon')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+</body>

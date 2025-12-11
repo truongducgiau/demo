@@ -1,0 +1,733 @@
+.menu {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(79, 74, 71, 0.6);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* LOGO */
+.anh {
+    width: 150px;
+    margin-left: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+
+/* PHẦN MENU */
+.menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+
+.menu .links li {
+    margin-left: 50px;
+    list-style: none;
+    display: inline-block;
+}
+
+.menu .links li a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.2s ease;
+    padding-bottom: 5px;
+}
+
+.search {
+    margin-left: 65px;
+    padding: 8px 12px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border-radius: 50px;
+    box-sizing: border-box;
+}
+
+.tim-kiem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 200px;
+}
+
+.tim-kiem i {
+    position: absolute;
+    left: 230px;
+    color: #333;
+}
+
+.menu:hover {
+    background-color: #fff;
+}
+
+.menu:hover .links li a {
+    color: #000;
+}
+
+
+.menu:hover .search {
+    border: 1px solid red;
+}
+
+.menu:hover .tim-kiem i {
+    color: red;
+}
+
+.menu .links li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -36px;
+    width: 0;
+    height: 3px;
+    background-color: rgb(60, 49, 186);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.menu .links li a:hover::after {
+    width: 100%;
+}
+
+.menu .birs {
+    cursor: pointer;
+    display: none;
+}
+
+.menu .tk {
+    cursor: pointer;
+    display: none;
+}
+
+/* MENU CON */
+.menucon {
+    display: none;
+    position: absolute;
+    left: 0.5rem;
+    top: 53px;
+    height: 0;
+    width: 200px;
+    background: #fff;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menucon.open {
+    height: 173px;
+}
+
+.menucon li {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menucon li a {
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+.menucon li a:hover {
+    color: red;
+}
+
+/* PHẦN ĐĂNG NHẬP */
+.dangnhap {
+    margin-left: 160px;
+}
+
+.dangnhap ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.dangnhap li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.dangnhap li i {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: orange;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.dangnhap li:hover i {
+    transform: scale(1.2);
+    color: red;
+}
+
+.menu:hover .dangnhap li span {
+    color: #000;
+}
+
+/* PHẦN ẢNH ĐỘNG */
+.slide-show {
+    width: 1521px;
+    max-width: 100vw;
+    height: 700px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    /* chỉ hiện 1 hình */
+}
+
+.list-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    height: 100%;
+    width: max-content;
+    transition: 0.5s;
+}
+
+.list-images img {
+    width: 1521px;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+.buttons {
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff5;
+    color: #fff;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.dots {
+    position: absolute;
+    bottom: 10px;
+    color: #fff;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.dots li {
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+.dots li.active {
+    width: 30px;
+}
+
+/* HỖ TRỢ KHÁCH HÀNG */
+.ho-tro-khach-hang {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 20px;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.ho-tro {
+    display: flex;
+    align-items: center;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    flex-basis: 23%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.ho-tro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ho-tro i {
+    font-size: 32px;
+    color: #fd8a28;
+    margin-right: 15px;
+}
+
+.ho-tro .text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.ho-tro .text-content span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #e55353;
+    text-transform: uppercase;
+}
+
+.ho-tro .text-content p {
+    font-size: 13px;
+    color: #666;
+    margin: 4px 0 0 0;
+}
+
+
+/* TIN TỨC */
+.title {
+    margin-top: 60px;
+    color: #1d9ad6;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: #1d9ad6;
+    margin: 6px auto 0;
+}
+
+.tin-tuc {
+    display: flex;
+}
+
+.banner {
+    padding: 20px 140px;
+}
+
+.banner img {
+    width: 600px;
+    height: auto;
+    object-fit: contain;
+}
+
+.text-tt {
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+.click {
+    margin-top: 20px;
+    display: inline-block;
+    background-color: black;
+    padding: 10px 20px;
+    border: 2px solid black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.click a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.click:hover {
+    background-color: white;
+}
+
+.click:hover a {
+    color: #000;
+}
+
+.cau-long-moi {
+    display: flex;
+}
+
+.text-tt2 {
+    margin-left: 200px;
+    margin-right: 70px;
+    padding-top: 150px;
+}
+
+.banner2 {
+    padding: 20px 0;
+}
+
+.banner2 img {
+    width: 1000px;
+    height: auto;
+    object-fit: contain;
+}
+
+.clm {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: violet;
+    margin-bottom: 10px;
+}
+
+.text-1 {
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.text-2 {
+    margin-bottom: 30px;
+}
+
+/* CÁC SẢN PHẨM DEMO */
+.container {
+    text-align: center;
+    background-color: #fd8a28;
+}
+
+.hang-moi-ve {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.san-pham{
+    position: relative;
+    width: 220px;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(232, 192, 14, 0.929);
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+.san-pham:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(232, 192, 14, 0.929);
+}
+
+.san-pham img {
+    width: 180px;
+    height: 230px;
+    object-fit: contain;
+}
+
+.giam-gia {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #2196f3;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+.giam-gia2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.ten {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 10px 0 5px 0;
+    color: #333;
+}
+
+.gia-cu {
+    text-decoration: line-through;
+    color: #777;
+    font-size: 13px;
+    margin: 0;
+}
+
+.gia-moi {
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+/* CÁC VẬN ĐỘNG VIÊN */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.card {
+    width: 280px;
+    background: #fff;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    position: relative;
+    top: -40px;
+    margin: 0 auto;
+    background: #fff;
+    width: 230px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(222, 130, 0, 0.956);
+    padding: 20px 16px 16px 16px;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.date-line {
+    display: inline-block;
+    margin: 10px 0;
+    position: relative;
+    color: white;
+    background-color: #ff5b1f;
+    border-radius: 20px;
+    padding: 4px 16px;
+    font-size: 13px;
+}
+
+.date-line::before,
+.date-line::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 1px;
+    background-color: #ff5b1f;
+    transform: translateY(-50%);
+}
+
+.date-line::before {
+    left: -45px;
+}
+
+.date-line::after {
+    right: -45px;
+}
+
+.card-content p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.container2 {
+    background-color: #222222;
+}
+
+.thong-tin {
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 110px;
+}
+
+.thong-tin-chung {
+    flex: 1;
+    min-width: 220px;
+}
+
+.thong-tin-chung ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+/* RESPONSIVE MOBILE*/
+@media(max-width: 580px) {
+    .slide-show {
+        height: 400px;
+    }
+
+    .menu .links,
+    .menu .tim-kiem,
+    .menu .dangnhap {
+        display: none;
+    }
+
+    .menu {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 45px;
+        background-color: #fff;
+    }
+
+    .menu .birs {
+        display: block;
+        margin-left: 20px;
+        margin-right: auto;
+        font-size: 28px;
+        color: #000;
+    }
+
+    .anh {
+        width: 80px;
+        height: auto;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .menu .tk {
+        display: block;
+        margin-left: auto;
+        margin-right: 20px;
+        font-size: 25px;
+        color: #000;
+    }
+
+    .menu:hover .tk {
+        color: black;
+    }
+
+    .slides {
+        margin-top: 45px;
+    }
+
+    .menucon {
+        display: block;
+    }
+
+    .ho-tro-khach-hang {
+        flex-wrap: wrap;
+    }
+
+    .ho-tro {
+        flex-basis: 48%;
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 5px;
+        margin: 0;
+    }
+
+    .ho-tro i {
+        font-size: 24px;
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+
+    .ho-tro .text-content span {
+        font-size: 10px;
+    }
+
+    .ho-tro .text-content p {
+        display: none;
+    }
+
+    .tin-tuc {
+        flex-wrap: wrap;
+    }
+    .banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+    .banner img {
+        width: 100%;
+        height: auto;
+    }
+    .text-tt {
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: center;
+    }
+    .tin-tuc .text-tt .text-2{
+        display: none;
+    }
+    .cau-long-moi {
+        display: none;
+    }
+    .hang-moi-ve{
+        justify-content: space-between;
+    }
+    .san-pham{
+        width: 46%;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    .san-pham img{
+        width: 100%;
+        height: auto;
+    }
+    .hang-moi-ve .san-pham:nth-child(n+3) {
+        display: none;
+    }
+    .thong-tin{
+        display: none;
+    }
+}
